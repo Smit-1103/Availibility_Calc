@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Availability</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Weekly Class Scheduler</h1>
+    <form id="class-form" class="form-card">
+      <div class="form-group">
+        <label for="day">Select Day</label>
+        <select id="day" class="input-field">
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="start-time">Class Start Time</label>
+        <input type="time" id="start-time" class="input-field" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="end-time">Class End Time</label>
+        <input type="time" id="end-time" class="input-field" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="buffer-time">Buffer Time (hours)</label>
+        <input type="number" id="buffer-time" min="0" step="0.5" class="input-field" required>
+      </div>
+      
+      <button type="button" id="add-class" class="btn">Add Class Schedule</button>
+    </form>
+
+    <div id="class-list" class="class-list">
+      <!-- Classes will be added here dynamically -->
+    </div>
+    
+    <button id="generate-report" class="btn">Generate Availability Report</button>
+
+    <h2>Weekly Availability Report</h2>
+    <div id="availability" class="availability-card"></div>
+    <button id="download-pdf" class="btn">Download PDF Report</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> -->
