@@ -1,4 +1,4 @@
-// Schedule storage
+// Schedule storage declaration
 const schedule = {};
 
 function to12Hour(time24) {
