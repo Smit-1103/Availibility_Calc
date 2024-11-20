@@ -184,16 +184,3 @@ document.getElementById("download-pdf").addEventListener("click", () => {
   doc.save("Availability_Report.pdf");
 });
 
-
-// Download as Excel
-document.getElementById("download-excel").addEventListener("click", () => {
-  let content = "Day,Availability\n";
-  for (const day of document.getElementById("availability").children) {
-    content += `${day.innerText}\n`;
-  }
-  const blob = new Blob([content], { type: "text/csv" });
-  const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "Weekly_Shift_Planner.csv";
-  link.click();
-});
